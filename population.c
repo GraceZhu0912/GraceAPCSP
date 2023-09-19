@@ -10,8 +10,8 @@ int main(void)
         start = get_int("enter again, the number just inputed was smaller than 9. Try again: ");
     }
     // TODO: Prompt for end size
-    int end = get_int("input the final number of llamas wanted, this should be bigger than your initial number of llamas: ");
-    while (end <= start)
+    int end = get_int("input the final number of llamas wanted, this should be bigger  or equal to your initial number of llamas: ");
+    while (end < start)
     {
         end = get_int("the number just inputed was equal or smaller than the initial number of llama. Try again: ");
     }
