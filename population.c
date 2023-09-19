@@ -22,9 +22,9 @@ int main(void)
     {
         current = current / 3 + current - current / 4;
         years += 1;
-        return years;
-    }
 
+    }
+    return years;
     // TODO: Print number of years
     printf("years: %i\n",years);
 
