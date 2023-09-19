@@ -21,6 +21,7 @@ int main(void)
     while (current < end)
     {
         current = current / 3 + current - current / 4;
+        printf("curret: %i",current);
         years += 1;
     }
 
