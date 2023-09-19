@@ -4,13 +4,14 @@
 int main(void)
 {
     // TODO: Prompt for start size
-    int start = get_int("input the initial number of llamas, this has to be equal or bigger than 9: " );
+    int start = get_int("input the initial number of llamas, this has to be equal or bigger than 9: ");
     while (start < 9)
     {
         start = get_int("enter again, the number just inputed was smaller than 9. Try again: ");
     }
     // TODO: Prompt for end size
-    int end = get_int("input the final number of llamas wanted, this should be bigger  or equal to your initial number of llamas: ");
+    int end =
+        get_int("input the final number of llamas wanted, this should be bigger  or equal to your initial number of llamas: ");
     while (end < start)
     {
         end = get_int("the number just inputed was equal or smaller than the initial number of llama. Try again: ");
@@ -22,10 +23,8 @@ int main(void)
     {
         current = current / 3 + current - current / 4;
         years += 1;
-
     }
 
     // TODO: Print number of years
-    printf("Years: %i",years);
-
+    printf("Years: %i", years);
 }
