@@ -50,7 +50,8 @@ int get_cents(void)
     do
     {
         amount = get_int("Change owed");
-    }while (amount < 0);
+    }
+    while (amount < 0);
     return amount;
 }
 
