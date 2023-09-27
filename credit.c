@@ -32,16 +32,15 @@ int main(void)
         }
         else if (length == 16 && first_digit == 5 && (second_digit == 1 || second_digit == 2 || second_digit == 3 || second_digit == 4 || second_digit == 5))
         {
-            printf("MASTER\n");
+            printf("MASTERCARD\n");
         }
         else if ((length == 13 || length == 14 || length == 15 || length == 16 )&& first_digit == 4)
         {
             printf("VISA\n");
         }
-
     }
     else
     {
-        printf("INVALID");
+        printf("INVALID\n");
     }
 }
