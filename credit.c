@@ -28,15 +28,15 @@ int main(void)
         int second_digit = number/(int)(pow(10,length-2)) % 10;
         if (length == 15)
         {
-            printf("AMEX");
+            printf("AMEX\n");
         }
         else if (length == 16 && first_digit == 5 && (second_digit == 1 || second_digit == 2 || second_digit == 3 || second_digit == 4 || second_digit == 5))
         {
-            printf("MASTER");
+            printf("MASTER\n");
         }
         else if ((length == 13 || length == 14 || length == 15 || length == 16 )&& first_digit == 4)
         {
-            printf("VISA");
+            printf("VISA\n");
         }
 
     }
