@@ -27,7 +27,7 @@ int main(void)
     {
         int first_digit = number/(int)(pow(10,length-1));
         int second_digit = number/(int)(pow(10,length-2)) % 10;
-        
+
         if (length == 15)
         {
             printf("AMEX\n");
@@ -44,6 +44,6 @@ int main(void)
 
     else
     {
-        printf("INVALID\n");
+        printf("INVALID");
     }
 }
