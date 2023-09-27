@@ -9,8 +9,9 @@
 
 int main(void)
 {
-    long number = get_int("Number: ");
+    long number = get_long("Number: ");
     int length = floor(1+log10(number));
+    printf("%i ",length);
     int sum = 0;
     int counter = 0;
 
@@ -22,7 +23,7 @@ int main(void)
         sum = sum + (((number / (int)(pow(10,counter))) % (int)(pow(10,counter + 1))))*2;
         number = number / 10;
     }
-
+    printf("%i ",sum);
     if (sum % 10 == 0)
     {
         int first_digit = number/(int)(pow(10,length-1));
@@ -44,6 +45,6 @@ int main(void)
 
     else
     {
-        printf("INVALID");
+        printf("INVALID\n");
     }
 }
