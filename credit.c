@@ -16,16 +16,18 @@ int main(void)
 
     while (number > 0)
     {
-
         sum = sum + ((number / (int)(pow(10,counter))) % (int)(pow(10,counter + 1)));
         number = number / 10;
         counter += 1;
         sum = sum + (((number / (int)(pow(10,counter))) % (int)(pow(10,counter + 1))))*2;
         number = number / 10;
     }
-    if (sum % 10 == 0){
+
+    if (sum % 10 == 0)
+    {
         int first_digit = number/(int)(pow(10,length-1));
         int second_digit = number/(int)(pow(10,length-2)) % 10;
+        
         if (length == 15)
         {
             printf("AMEX\n");
@@ -39,6 +41,7 @@ int main(void)
             printf("VISA\n");
         }
     }
+
     else
     {
         printf("INVALID\n");
