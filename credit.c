@@ -18,7 +18,7 @@ int main(void)
     //printf("number = %ld and length = %i\n",number,length);
     long number = original;
     //printf("o %ld ",original);
-    while (number > 0 && length <= 16)
+    while (number > 0)
     {
         //digit =(number / (int)(pow(10,counter))) % (int)(pow(10,counter + 1));
         digit = number%10;
@@ -49,7 +49,7 @@ int main(void)
 
         //printf("first digit = %ld, second digit = %ld",first_digit,second_digit);
 
-        if (length == 15)
+        if (length == 15 && first_digit == 3 && (second_digit == 3 || second_digit == 7))
         {
             printf("AMEX\n");
         }
@@ -60,6 +60,10 @@ int main(void)
         else if ((length == 13 || length == 14 || length == 15 || length == 16 )&& first_digit == 4)
         {
             printf("VISA\n");
+        }
+        else
+        {
+            printf("INVALID\n");
         }
     }
 
