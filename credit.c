@@ -18,7 +18,7 @@ int main(void)
     //printf("number = %ld and length = %i\n",number,length);
     long number = original;
     //printf("o %ld ",original);
-    while (number > 0)
+    while (number > 0 && length <= 16)
     {
         //digit =(number / (int)(pow(10,counter))) % (int)(pow(10,counter + 1));
         digit = number%10;
