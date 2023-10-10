@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -48,8 +48,7 @@ int compute_score(string word)
     int character;
     int length = strlen(word);
 
-
-    for (character = 0; character < length; character ++)
+    for (character = 0; character < length; character++)
     {
         word[character] = tolower(word[character]);
         index = word[character];
