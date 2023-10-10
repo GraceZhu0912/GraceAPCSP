@@ -48,9 +48,10 @@ int compute_score(string word)
     int character;
     int length = strlen(word);
 
+
     for (character = 0; character < length; character ++)
     {
-
+        word[character] = tolower(word[character]);
         index = word[character];
         if (index > 96 && index < 123)
         {
