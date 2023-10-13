@@ -10,7 +10,14 @@
 
 int main(int argc, string argv[])
 {
-    string word = get_string("");
+    if (argc != 2)
+    {
+        printf("enter the function name and the word");
+        return 1;
+    }
+
+    string word = argv[1];
+
     int character;
     int length = strlen(word);
 
