@@ -33,5 +33,5 @@ int main(int argc, string argv[])
                 break;
         }
     }
-    printf("%s",word);
+    printf("%s\n",word);
 }
