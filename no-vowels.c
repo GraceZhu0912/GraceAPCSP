@@ -10,7 +10,7 @@
 
 int main(int argc, string argv[])
 {
-    string word = get_string();
+    string word = get_string("");
     int character;
     int length = strlen(word);
 
