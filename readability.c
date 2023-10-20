@@ -53,7 +53,7 @@ void find(string text)
             letter += 1;
         else if (text[i] == 32)
             word += 1;
-        else if (text[i] == 33 || text[i] == 44 || text[i] == 63)
+        else if (text[i] == 33 || text[i] == 46 || text[i] == 63)
             sentence += 1;
     }
     word += 1;
