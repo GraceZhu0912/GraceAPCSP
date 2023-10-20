@@ -31,16 +31,16 @@ int main(void)
 
     if (index < 1)
     {
-        printf("Before Grade 1");
+        printf("Before Grade 1\n");
     }
     else if (index > 16)
     {
-        printf("Grade 16+");
+        printf("Grade 16+\n");
     }
     else
     {
         index = round(index);
-        printf("Grade %i",(int)index);
+        printf("Grade %i\n",(int)index);
     }
 }
 
