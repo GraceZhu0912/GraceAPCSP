@@ -24,8 +24,8 @@ int main(void)
     find(text);
     //printf("%i,%i,%i",letter,word,sentence);
 
-    float L = ((float)letter/word)*100;
-    float S = ((float)sentence/word)*100;
+    float L = ((float)letter/(float)word)*100;
+    float S = ((float)sentence/(float)word)*100;
     float index = 0.0588 * L - 0.296 * S - 15.8;
     //printf("L = %f, S = %f, index = %f",L,S,index);
 
