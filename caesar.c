@@ -39,7 +39,7 @@ int main(int argc, string argv[])
             {
                     ascii = ((ascii - 65) % 26) + 65;
             }
-            message[i] = ascii;
+        message[i] = ascii;
         }
     }
     printf("ciphertext: %s\n", message);
