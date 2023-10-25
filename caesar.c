@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 int main(int argc, string argv[])
 {
     if (argc != 2)
@@ -10,23 +12,42 @@ int main(int argc, string argv[])
     }
 
     string message = get_string("plaintext: ");
-    int key = argc;
+    int j;
+    for (j=0; j < strlen(argv[1]); j++)
+    {
+        if ((argv[1][j] < 48) || (argv[1][j] > 57))
+            {
+                return 2;
+            }
+    }
+
+    int key = atoi(argv[1]);
     int i;
-    int ascii;
+    char ascii;
 
     for (i = 0; i<strlen(message); i++)
     {
-        if ((message[i] > 'a') && (message[i] < 'z'))
+        if (isalpha(message[i]))
         {
-            ascii = message[i];
-            ascii += key;
-            if (ascii > 'z')
-            {
-                ascii = ascii%26;
-            }
-            message[i] = ascii;
+            ascii = message[i]+key;
 
+            //printf(" %c", ascii);
+
+            if (islower(message[i]))
+            {
+                    ascii = ((ascii - 97) % 26) + 97;
+
+            }
+
+            else if (isupper(message[i]))
+            {
+
+                    ascii = ((ascii - 65) % 26) + 65;
+
+            }
+            //printf(" %c", ascii);
+            message[i] = ascii;
         }
     }
-    printf("ciphertext: %s \n", message);
+    printf("ciphertext: %s\n", message);
 }
