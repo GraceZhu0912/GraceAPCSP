@@ -22,7 +22,7 @@ int main(int argc, string argv[])
 
     string message = get_string("plaintext: ");
     int key = atoi(argv[1]);
-    key = key%26;
+    //key = key%26;
     int i;
     char ascii;
 
@@ -30,7 +30,8 @@ int main(int argc, string argv[])
     {
         if (isalpha(message[i]))
         {
-            ascii = message[i]+key;
+            ascii = message[i] + key;
+
             if (islower(message[i]))
             {
                     ascii = ((ascii - 97) % 26) + 97;
