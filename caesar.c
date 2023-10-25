@@ -31,20 +31,14 @@ int main(int argc, string argv[])
         if (isalpha(message[i]))
         {
             ascii = message[i]+key;
-
             //printf(" %c", ascii);
-
             if (islower(message[i]))
             {
-                    ascii = ((ascii - 97) % 26) + 97;
-
+                    ascii = ((ascii - 96) % 26) + 96;
             }
-
             else if (isupper(message[i]))
             {
-
-                    ascii = ((ascii - 65) % 26) + 65;
-
+                    ascii = ((ascii - 64) % 26) + 64;
             }
             //printf(" %c", ascii);
             message[i] = ascii;
