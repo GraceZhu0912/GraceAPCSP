@@ -10,8 +10,7 @@ int main(int argc, string argv[])
         printf("enter the name of the program and the key of encryption");
         return 1;
     }
-
-    string message = get_string("plaintext: ");
+    
     int j;
     for (j=0; j < strlen(argv[1]); j++)
     {
@@ -21,6 +20,7 @@ int main(int argc, string argv[])
             }
     }
 
+    string message = get_string("plaintext: ");
     int key = atoi(argv[1]);
     key = key%26;
     int i;
@@ -31,16 +31,14 @@ int main(int argc, string argv[])
         if (isalpha(message[i]))
         {
             ascii = message[i]+key;
-            //printf(" %c", ascii);
             if (islower(message[i]))
             {
-                    ascii = ((ascii - 96) % 26) + 96;
+                    ascii = ((ascii - 97) % 26) + 97;
             }
             else if (isupper(message[i]))
             {
-                    ascii = ((ascii - 64) % 26) + 64;
+                    ascii = ((ascii - 65) % 26) + 65;
             }
-            //printf(" %c", ascii);
             message[i] = ascii;
         }
     }
