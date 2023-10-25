@@ -10,13 +10,13 @@ int main(int argc, string argv[])
         printf("enter the name of the program and the key of encryption");
         return 1;
     }
-    
+
     int j;
     for (j=0; j < strlen(argv[1]); j++)
     {
         if ((argv[1][j] < 48) || (argv[1][j] > 57))
             {
-                return 2;
+                return 1;
             }
     }
 
