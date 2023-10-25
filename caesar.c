@@ -22,7 +22,7 @@ int main(int argc, string argv[])
 
     string message = get_string("plaintext: ");
     int key = atoi(argv[1]);
-    //key = key%26;
+    key = key%26;
     int i;
     char ascii;
 
