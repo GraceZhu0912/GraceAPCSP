@@ -22,6 +22,7 @@ int main(int argc, string argv[])
     }
 
     int key = atoi(argv[1]);
+    key = key%26;
     int i;
     char ascii;
 
