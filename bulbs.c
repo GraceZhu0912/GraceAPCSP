@@ -3,49 +3,41 @@
 #include <string.h>
 #include <math.h>
 
-/*
-get the message
-convert the message to ASCII num
-for every character
-    get the remainder when divided by 2, 8 times
-        directly print the corresponding bulbs by the functions
-    change line
-light the bulbs using for loop*/
-
 const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
 
 int main(void)
 {
-    // TODO
-    string message = get_string("Message:");
-    int num = 0;
-    int i;
-    int j;
-    int k;
-    int binary[8];
+    string message = get_string("Message: ");
 
-    for (i = 0; i < strlen(message); i++)
+    int num;
+    //the ascii code of EACH letter, this is in decimal
+
+    int bin[8];
+    //the list for the binary code
+
+    int i;
+    for (i = 0; i<strlen(message); i++)
     {
         num = message[i];
-        //printf("total num = %i\n", num);
-        //printf("character = %c\n",message[i]);
+        //printf("%i ", message[i]);
 
-        for (j = 0; j < BITS_IN_BYTE; j++)
+        int j;
+        for (j = 0; j<BITS_IN_BYTE; j++) //decimal to binary conversion
         {
-            binary[i] = num%2;
+            bin[j] = num%2;
             num = num/2;
-            //printf("current binary = %i\n",binary[8-i]);
-            //printf("num = %i",num);
+            //printf("binary = %i ",bin[j]);
+
         }
 
-        for (k = 0; k< BITS_IN_BYTE; k++)
+        int k;
+        for (k = BITS_IN_BYTE; k>=0 ;k--)
         {
-            printf("%i ",binary[k]);
-            //print_bulb(binary[k]);
+            print_bulb(bin[k]);
         }
-        printf("\n\n");
+        printf("\n");
     }
 }
 
