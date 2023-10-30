@@ -34,6 +34,7 @@ string key = argv[1];
         count = 0;
         if (isalpha(key[k]))
         {
+            /*
             for (c = 0; c < 26; c++)
             {
                 if (isupper(key[k]))
@@ -52,11 +53,21 @@ string key = argv[1];
                     }
                 }
             }
+            */
+           for (c = 0; c < 26; c++)
+           {
+                if ((key[k] == islower(key[c])) || (key[k] == isupper(key[c])))
+                {
+                    count += 1;
+                }
+           }
+
             if (count != 1)
             {
-                printf("Key must contain 26 characters.");
+                printf("characters in key must not overlap");
                 return 1;
             }
+
         }
         else
         {
