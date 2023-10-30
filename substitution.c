@@ -15,10 +15,30 @@ int main(int argc, string argv[])
 {
     if (argc != 2)
     {
-        printf("you need both program name and key");
+        printf("Usage: ./substitution key");
         return 1;
     }
-    string key = argv[1];
+
+string key = argv[1];
+    if (strlen(argv[1]) != 26)
+    {
+        printf("Key must contain 26 characters.");
+        return 1;
+    }
+
+    int k;
+    for (k = 0; k < 26; k++)
+    {
+        if (isalpha(key[k]))
+        {
+        }
+        else
+        {
+        printf("Key must contain 26 characters.");
+        return 1;
+        }
+    }
+
     string text = get_string("plaintext: ");
     int position;
     int i;
