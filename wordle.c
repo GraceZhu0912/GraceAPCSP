@@ -117,7 +117,6 @@ int main(int argc, string argv[])
         printf("%s",choice);
     }
 
-
     // that's all folks!
     return 0;
 }
@@ -151,13 +150,12 @@ int check_word(string guess, int wordsize, int status[], string choice)
             //right place
             score += 2;
             status[j] = EXACT;
-
         }
         else
         {
             for (k = 0; k < wordsize; k++)
             {
-                if (guess[j] == guess[k])
+                if (guess[j] == choice[k])
                 {
                     score += 1;
                     status[j] = CLOSE;
