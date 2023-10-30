@@ -1,9 +1,9 @@
 #include <cs50.h>
-#include <stdlib.h>
+#include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <ctype.h>
 
 // each of our text files contains 1000 words
 #define LISTSIZE 1000
@@ -14,10 +14,10 @@
 #define WRONG 0
 
 // ANSI color codes for boxed in letters
-#define GREEN   "\e[38;2;255;255;255;1m\e[48;2;106;170;100;1m"
-#define YELLOW  "\e[38;2;255;255;255;1m\e[48;2;201;180;88;1m"
-#define RED     "\e[38;2;255;255;255;1m\e[48;2;220;20;60;1m"
-#define RESET   "\e[0;39m"
+#define GREEN "\e[38;2;255;255;255;1m\e[48;2;106;170;100;1m"
+#define YELLOW "\e[38;2;255;255;255;1m\e[48;2;201;180;88;1m"
+#define RED "\e[38;2;255;255;255;1m\e[48;2;220;20;60;1m"
+#define RESET "\e[0;39m"
 
 // user-defined function prototypes
 string get_guess(int wordsize);
@@ -70,7 +70,7 @@ int main(int argc, string argv[])
     bool won = false;
 
     // print greeting, using ANSI color codes to demonstrate
-    printf(GREEN"This is WORDLE50"RESET"\n");
+    printf(GREEN "This is WORDLE50" RESET "\n");
     printf("You have %i tries to guess the %i-letter word I'm thinking of\n", guesses, wordsize);
 
     // main game loop, one iteration for each guess
@@ -114,7 +114,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        printf("%s",choice);
+        printf("%s", choice);
     }
 
     // that's all folks!
@@ -127,10 +127,10 @@ string get_guess(int wordsize)
 
     // ensure users actually provide a guess that is the correct length
     // TODO #3
-    guess = get_string("Input a %i-letter word",wordsize);
+    guess = get_string("Input a %i-letter word", wordsize);
     while (strlen(guess) != wordsize)
     {
-        guess = get_string("Input a %i-letter word: ",wordsize);
+        guess = get_string("Input a %i-letter word: ", wordsize);
     }
 
     return guess;
@@ -148,7 +148,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
     {
         if (guess[j] == choice[j])
         {
-            //right place
+            // right place
             score += 2;
             status[j] = EXACT;
         }
@@ -171,11 +171,11 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
     // HINTS
     // iterate over each letter of the guess
-        // iterate over each letter of the choice
-            // compare the current guess letter to the current choice letter
-                // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
-                // if it's in the word, but not the right spot, score CLOSE point (yellow)
-        // keep track of the total score by adding each individual letter's score from above
+    // iterate over each letter of the choice
+    // compare the current guess letter to the current choice letter
+    // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
+    // if it's in the word, but not the right spot, score CLOSE point (yellow)
+    // keep track of the total score by adding each individual letter's score from above
 
     return score;
 }
@@ -189,15 +189,15 @@ void print_word(string guess, int wordsize, int status[])
     {
         if (status[p] == EXACT)
         {
-            printf(GREEN"%c"RESET, guess[p]);
+            printf(GREEN "%c" RESET, guess[p]);
         }
         else if (status[p] == CLOSE)
         {
-            printf(YELLOW"%c"RESET, guess[p]);
+            printf(YELLOW "%c" RESET, guess[p]);
         }
         else
         {
-            printf(RED"%c"RESET, guess[p]);
+            printf(RED "%c" RESET, guess[p]);
         }
     }
 
