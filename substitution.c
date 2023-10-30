@@ -30,11 +30,14 @@ int main(int argc, string argv[])
             text[i] = key[position];
             text[i] = tolower(text[i]);
         }
+
         else if (isupper(text[i]))
         {
             position = text[i] - 65;
             text[i] = key[position];
+            text[i] = toupper(text[i]);
         }
     }
+
     printf("ciphertext: %s\n", text);
 }
