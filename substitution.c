@@ -14,65 +14,54 @@ print
 int main(int argc, string argv[])
 {
     if (argc != 2)
+    // check input
     {
         printf("Usage: ./substitution key");
         return 1;
     }
 
-string key = argv[1];
+    string key = argv[1];
     if (strlen(argv[1]) != 26)
+    //check key length
     {
         printf("Key must contain 26 characters.");
         return 1;
+    }
+    int d;
+    for (d = 0; d < 26; d++)
+    //check if all is aphabet
+    {
+        if (isalpha(key[d]))
+        {
+        }
+
+        else
+        {
+        printf("Key must contain all aphabets.");
+        return 1;
+        }
+
     }
 
     int k;
     int c;
     int count;
     for (k = 0; k < 26; k++)
+    //check overlap alphabet
     {
         count = 0;
-        if (isalpha(key[k]))
+        for (c = 0; c < 26; c++)
         {
-            /*
-            for (c = 0; c < 26; c++)
+            if (key[c] == key[k])
             {
-                if (isupper(key[k]))
-                {
-                    if (key[k] == (65 + c))
-                    {
-                        count += 1;
-                    }
-                }
-
-                if (islower(key[k]))
-                {
-                    if (key[k] == (97 + c))
-                    {
-                        count += 1;
-                    }
-                }
+                count += 1;
             }
-            */
-           for (c = 0; c < 26; c++)
-           {
-                if ((key[k] == islower(key[c])) || (key[k] == isupper(key[c])))
-                {
-                    count += 1;
-                }
-           }
-
-            if (count != 1)
-            {
-                printf("characters in key must not overlap");
-                return 1;
-            }
-
         }
-        else
+
+        if (count != 1)
         {
-        printf("Key must contain 26 characters.");
-        return 1;
+            printf("characters in key must not overlap");
+            return 1;
         }
     }
 
