@@ -1,7 +1,7 @@
 #include <cs50.h>
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 const int BITS_IN_BYTE = 8;
 
@@ -12,28 +12,27 @@ int main(void)
     string message = get_string("Message: ");
 
     int num;
-    //the ascii code of EACH letter, this is in decimal
+    // the ascii code of EACH letter, this is in decimal
 
     int bin[8];
-    //the list for the binary code
+    // the list for the binary code
 
     int i;
-    for (i = 0; i<strlen(message); i++)
+    for (i = 0; i < strlen(message); i++)
     {
         num = message[i];
-        //printf("%i ", message[i]);
+        // printf("%i ", message[i]);
 
         int j;
-        for (j = 0; j<BITS_IN_BYTE; j++) //decimal to binary conversion
+        for (j = 0; j < BITS_IN_BYTE; j++) // decimal to binary conversion
         {
-            bin[j] = num%2;
-            num = num/2;
-            //printf("binary = %i ",bin[j]);
-
+            bin[j] = num % 2;
+            num = num / 2;
+            // printf("binary = %i ",bin[j]);
         }
 
         int k;
-        for (k = BITS_IN_BYTE-1; k>=0 ;k--)
+        for (k = BITS_IN_BYTE - 1; k >= 0; k--)
         {
             print_bulb(bin[k]);
         }
