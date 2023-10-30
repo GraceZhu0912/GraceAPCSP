@@ -33,7 +33,7 @@ int main(void)
         }
 
         int k;
-        for (k = BITS_IN_BYTE; k>1 ;k--)
+        for (k = BITS_IN_BYTE+1; k>0 ;k--)
         {
             print_bulb(bin[k]);
         }
