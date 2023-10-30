@@ -28,10 +28,9 @@ int main(int argc, string argv[])
 
     for (i = 0; i<strlen(message); i++)
     {
+        ascii = message[i] + key;
         if (isalpha(message[i]))
         {
-            ascii = message[i] + key;
-
             if (islower(message[i]))
             {
                     ascii = ((ascii - 97) % 26) + 97;
@@ -41,7 +40,8 @@ int main(int argc, string argv[])
                     ascii = ((ascii - 65) % 26) + 65;
             }
         }
-    message[i] = ascii;
+
+        message[i] = ascii;
     }
     printf("ciphertext: %s\n", message);
 }
