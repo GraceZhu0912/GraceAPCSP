@@ -31,11 +31,12 @@ int main(int argc, string argv[])
         ascii = message[i];
         if (isalpha(message[i]))
         {
-            ascii += key;
+            ascii += key;   
 
             if (islower(message[i]))
             {
                     ascii = ((ascii - 97) % 26) + 97;
+
             }
             else if (isupper(message[i]))
             {
