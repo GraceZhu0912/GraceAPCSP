@@ -1,13 +1,16 @@
+
+
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+
 int main(int argc, string argv[])
 {
     if (argc != 2)
     {
-        printf("enter the name of the program and the key of encryption");
+        printf("Usage: ./caesar key");
         return 1;
     }
 
@@ -21,27 +24,28 @@ int main(int argc, string argv[])
     }
 
     string message = get_string("plaintext: ");
-    int key = atoi(argv[1]);
-    key = key%26;
-    int i;
-    char ascii;
 
-    for (i = 0; i<strlen(message); i++)
+    int i;
+    int ascii;
+    int key = atoi(argv[1]);
+    for (i = 0; j < strlen(message); i++)
     {
-        ascii = message[i] + key;
+        ascii = message[i];
+
         if (isalpha(message[i]))
         {
-            if (islower(message[i]))
+            ascii += key;
+            if (isupper(message[i]))
             {
-                    ascii = ((ascii - 97) % 26) + 97;
+                ascii = ((ascii - 65) % 26) + 65;
             }
-            else if (isupper(message[i]))
+            else if (islower(message[i]))
             {
-                    ascii = ((ascii - 65) % 26) + 65;
+                ascii = ((ascii - 97) % 26) + 97;
             }
         }
-
         message[i] = ascii;
     }
-    printf("ciphertext: %s\n", message);
+    printf("ciphertext: %s", message);
+
 }
