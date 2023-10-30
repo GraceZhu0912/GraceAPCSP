@@ -27,10 +27,36 @@ string key = argv[1];
     }
 
     int k;
+    int c;
+    int count;
     for (k = 0; k < 26; k++)
     {
+        count = 0;
         if (isalpha(key[k]))
         {
+            for (c = 0; c < 26; c++)
+            {
+                if (isupper(key[k]))
+                {
+                    if (key[k] == (65 + c))
+                    {
+                        count += 1;
+                    }
+                }
+
+                if (islower(key[k]))
+                {
+                    if (key[k] == (97 + c))
+                    {
+                        count += 1;
+                    }
+                }
+            }
+            if (count != 1)
+            {
+                printf("Key must contain 26 characters.");
+                return 1;
+            }
         }
         else
         {
