@@ -112,8 +112,6 @@ void print_winner(void)
         if (candidates[c].votes == highest)
         {
             printf("%s\n",candidates[c].name);
-            printf("%i\n",candidates[c].votes);
-
         }
     }
 
