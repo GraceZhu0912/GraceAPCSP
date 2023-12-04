@@ -92,5 +92,5 @@ void print_winner(void)
             winner = candidates[j].name;
         }
     }
-    printf("%s",winner);
+    printf("%s\n",winner);
 }
