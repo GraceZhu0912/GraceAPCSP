@@ -96,14 +96,15 @@ void print_winner(void)
    {
         for (int k = 0; k < candidate_count; k++)
         {
-            if (candidates[j].votes < candidates[j+1].votes)
+            if (candidates[k].votes < candidates[k+1].votes)
             {
-                temp = candidates[j];
-                candidates[j] = candidates[j+1];
-                candidates[j+1] = temp;
+                temp = candidates[k];
+                candidates[k] = candidates[k+1];
+                candidates[k+1] = temp;
             }
         }
    }
+
     highest = candidates[0].votes;
     printf("%s\n", candidates[0].name);
     for (int c = 1; c < candidate_count; c++)
@@ -111,6 +112,8 @@ void print_winner(void)
         if (candidates[c].votes == highest)
         {
             printf("%s\n",candidates[c].name);
+            printf("%i\n",candidates[c].votes);
+
         }
     }
 
