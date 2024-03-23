@@ -1,26 +1,29 @@
-document.addEventListener('DOMConteneLoaded', function(){
+document.addEventListener('DOMContentLoaded', function() {
 
-    let correct = document.querySelectorAll('.correct');
-    correct.addEventListener('click', function() {
+    let correct = document.querySelector('.correct');
+    correct.addEventListener('click', function(event) {
         correct.style.backgroundColor = 'green';
         document.querySelector('#feedback1').innerHTML = 'Correct!';
-    });
+        });
 
     let incorrects = document.querySelectorAll('.incorrect');
-    for (let i = 0;  < incorrects.length; i++) {
-        incorrects[i].addEventListener('click', funcion(){
-            incorrects[i].style.backgroundColor = 'red';
-            document.querySelector('#feedback1').innerHTML = "incorrect';
+    for(let i = 0; i < incorrects.length; i++)
+    {
+        incorrects[i].addEventListener('click', function(event) {
+        incorrects[i].style.backgroundColor = 'red';
+        document.querySelector('#feedback1').innerHTML = 'Incorrect';
         });
     }
-};
 
-document.querySelector('#check').addEventListener('click', function(){
-    let input = document.querySelector('input');
-    if (input.value === 'nothing'){
-        input.style.backgroundColor = 'green';
-        document.querySelector('#feedback2').innerHTML = 'Correct!';
-    } else {
-        input.style.backgroundColor('#feedback2').innerHTML = 'Incorrect';
-    }
+    document.querySelector('#check').addEventListener('click', function(){
+        let input = document.querySelector('input');
+        if(input.value.toLowerCase() == 'nothing') {
+            input.style.backgroundColor = 'green';
+            document.querySelector('#feedback2').innerHTML = 'Correct!';
+        } else {
+            input.style.backgroundColor = 'red';
+            document.querySelector('#feedback2').innerHTML = 'Incorrect';
+        }
+    });
+
 });
